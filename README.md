@@ -6,6 +6,6 @@ SubTask of this repository:
 2. Connecting the interface with the assistant.
 
 Repository’s files :
-ProjectRobotArm.html ‘The interface code’ .
-Style.css ‘The interface style code’ .
-skill-Task3.json
+- ProjectRobotArm.html ‘The interface code’ .
+- Style.css ‘The interface style code’ .
+- skill-Task3.json
