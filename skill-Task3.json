@@ -1,0 +1,415 @@
+{
+  "intents": [
+    {
+      "intent": "AboutUs",
+      "examples": [
+        {
+          "text": "1"
+        },
+        {
+          "text": "About Us"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Achievements",
+      "examples": [
+        {
+          "text": "4"
+        },
+        {
+          "text": "Achievements"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ContactUs",
+      "examples": [
+        {
+          "text": "7"
+        },
+        {
+          "text": "Contact Us"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Mission",
+      "examples": [
+        {
+          "text": "3"
+        },
+        {
+          "text": "Mission"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "no",
+      "examples": [
+        {
+          "text": "no"
+        },
+        {
+          "text": "no thanks"
+        },
+        {
+          "text": "no thank you"
+        },
+        {
+          "text": "thanks a lot"
+        },
+        {
+          "text": "thank you"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "OurClients",
+      "examples": [
+        {
+          "text": "6"
+        },
+        {
+          "text": "Our Clients"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Robots",
+      "examples": [
+        {
+          "text": "5"
+        },
+        {
+          "text": "Robots"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Vision",
+      "examples": [
+        {
+          "text": "2"
+        },
+        {
+          "text": "Vision"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Welcome",
+      "examples": [
+        {
+          "text": "Good Afternoon"
+        },
+        {
+          "text": "GoodAfternoon"
+        },
+        {
+          "text": "Good evening"
+        },
+        {
+          "text": "GoodEvening"
+        },
+        {
+          "text": "Good morning"
+        },
+        {
+          "text": "GoodMorning"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hi"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "understand",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_7_1624992650711",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "1. Coffee Serving Robot .\n2. Customer Service Robot ."
+              },
+              {
+                "text": "Thanks for asking 💛, is there any other question?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#Robots",
+      "dialog_node": "node_10_1624994114566",
+      "previous_sibling": "node_7_1624995185999"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "A national commercial corporation established in 2010 and registered in the Ministry of Commerce, Specialized in automated machine, robots and artificial intelligence. The commercial facility is considered as the first in the service of researchers and innovators in Arab world, and classified by Forbes magazine as one of the most innovative companies in the Kingdom of Saudi Arabia in the latest classification in 2015."
+              },
+              {
+                "text": "Thanks for asking 💛, is there any other question?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#AboutUs",
+      "dialog_node": "node_1_1624993460544",
+      "previous_sibling": "node_9_1624993553907"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Our mission is to transform the technology generation from users to producers and developers."
+              },
+              {
+                "text": "Thanks for asking 💛, is there any other question?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#Mission",
+      "dialog_node": "node_1_1624993869878",
+      "previous_sibling": "node_7_1624994216235"
+    },
+    {
+      "type": "standard",
+      "title": "Thank you",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Glad to help 🌻"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#no",
+      "dialog_node": "node_2_1625091347043",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "1. 1675 Implemented Electronic Circuits .\n2. 36 Robots And Manufactured Mechanical Systems .\n3. 675 Supported Scientific Research .\n4. 843 Innovations Implemented And Recorded ."
+              },
+              {
+                "text": "Thanks for asking 💛, is there any other question?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#Achievements",
+      "dialog_node": "node_4_1624993903240",
+      "previous_sibling": "node_1_1624993869878"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Here we will answer all your questions about Smart methods company . So how can i help you ?\n1. About Us \n2. Vision \n3. Mission \n4. Achievements \n5. Robots \n6. Our Clients \n7. Contact Us"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Welcome",
+      "dialog_node": "node_7_1624992650711",
+      "previous_sibling": "node_1_1624993460544"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "1. UQU\n2. PNU\n3. KAU\n4. UT\n5. Hafco"
+              },
+              {
+                "text": "Thanks for asking 💛, is there any other question?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#OurClients",
+      "dialog_node": "node_7_1624994216235",
+      "previous_sibling": "node_10_1624994114566"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Email : info@s-m.com.sa\nPhone number : 0580202718"
+              },
+              {
+                "text": "Thanks for asking 💛, is there any other question?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#ContactUs",
+      "dialog_node": "node_7_1624995185999",
+      "previous_sibling": "node_2_1625091347043"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "To be the first destination for innovators and researchers in the Arab world and provide them with everything they need in the field of electronics, mechanics and computers."
+              },
+              {
+                "text": "Thanks for asking 💛, is there any other question?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#Vision",
+      "dialog_node": "node_9_1624993553907",
+      "previous_sibling": "node_4_1624993903240"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello "
+              },
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Task3",
+  "language": "en",
+  "description": ""
+}
